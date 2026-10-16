@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://semfinalroutine.vercel.app/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Countdown | BMB</title>
+<meta name="description" content="Semester 1/1-2026 exam routine and live countdown, BMB.">
+<meta name="theme-color" content="#ecdcb4">
+<meta property="og:title" content="Countdown | BMB">
+<meta property="og:description" content="BMB Semester 1/1-2026 (Session: 2025–26) exam routine and countdown.">
+<meta property="og:url" content="https://semfinalroutine.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://semfinalroutine.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="stylesheet" href="./Countdown _ SUST_files/css2" media="all" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@700;800&family=Cinzel:wght@400;600;900&family=IM+Fell+English&display=swap"></noscript>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:48px;--s6:64px;
+--parch:#ecdcb4;--parch2:#e2cf9f;--ink:#2a1c10;--muted:#5c4528;--oxblood:#7a1f1a;--gold:#8a6a1f;--line:#b99d5e;
+--num:"Bitter",Georgia,"Times New Roman",serif;--display:"Cinzel","Trajan Pro",Georgia,serif;--body:"IM Fell English",Georgia,"Times New Roman",serif;
+--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+h1,.nm,.uni{overflow-wrap:break-word}
+html,body{margin:0}
+body{background:var(--parch);color:var(--ink);font-family:var(--body);font-size:1.05rem;min-height:100vh}
+main{padding:var(--s1)}
+.frame{background:var(--parch);border:1px solid var(--gold);outline:1px solid var(--line);outline-offset:-8px;padding:var(--s4) clamp(var(--s2),5vw,var(--s6)) var(--s3);min-height:calc(100vh - var(--s2));position:relative}
+.frame::before,.frame::after{content:"";position:absolute;width:11px;height:11px;background:var(--oxblood);transform:rotate(45deg);top:-6px}
+.frame::before{left:calc(50% - 40px)}.frame::after{right:calc(50% - 40px)}
+
+/* header: small university name left, clock right */
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--s1) var(--s2);border-bottom:1px solid var(--line);padding-bottom:var(--s2)}
+.uni{font:600 .8rem/1.4 var(--display);letter-spacing:.04em}
+.clock{flex:none;text-align:right}
+.clock small{display:block;margin-bottom:2px;font:400 .6rem var(--display);letter-spacing:.16em;color:var(--muted)}
+.clock span{font:800 1rem/1.2 var(--num);color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* stage: countdown left, pie right (wide screens only) */
+.stage{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s4);padding:var(--s3) 0}
+.pie{display:none}
+.eyebrow{margin-bottom:var(--s1);font:400 .75rem var(--display);letter-spacing:.2em;color:var(--oxblood)}
+h1{margin:0 0 var(--s3);font:600 clamp(1.75rem,4.6vw,3rem)/1.1 var(--display);letter-spacing:.005em}
+.when{margin-bottom:var(--s4);color:var(--muted)}
+.code{display:block;margin-top:var(--s1);font:400 .75rem/1.3 var(--display);letter-spacing:.14em;color:var(--muted)}
+.dc{display:flex;flex-wrap:wrap;row-gap:var(--s2);align-items:flex-end}
+.dc .c{padding:0 clamp(var(--s1),2.4vw,var(--s3));border-left:1px solid var(--line)}
+.dc .c:first-child{padding-left:0;border-left:0}
+.dc b{display:block;font:800 clamp(1.1rem,3.4vw,1.9rem)/1 var(--num);color:var(--ink);white-space:nowrap}
+.dc span{display:block;margin-top:var(--s1);font:600 .64rem var(--display);letter-spacing:.16em;color:var(--muted)}
+.dc .tm b{color:var(--oxblood)}
+.dc.big{padding-bottom:var(--s2);margin-bottom:var(--s2);border-bottom:1px solid var(--line)}
+.nums{display:flex;align-items:flex-end}
+.n{padding:0 clamp(var(--s2),3vw,var(--s4));border-left:1px solid var(--line)}
+.n:first-child{padding-left:0;border-left:0}
+.n b{display:block;font:800 clamp(1.75rem,6vw,3.25rem)/1 var(--num);font-variant-numeric:tabular-nums;color:var(--ink)}
+.n:first-child b{font-size:clamp(3.25rem,13vw,7rem);color:var(--oxblood)}
+.n span{display:block;margin-top:var(--s1);font:600 .72rem var(--display);letter-spacing:.16em;color:var(--muted)}
+.hero{min-width:0}
+.nums{flex-wrap:wrap;row-gap:var(--s2)}
+.n{min-width:0}
+/* size everything from the width of its own column (and the screen height), so it never runs into the pie */
+@supports (width:1cqi){
+ .hero{container-type:inline-size}
+ h1{font-size:clamp(1.5rem,6.4cqi,3rem)}
+ .dc .c{padding:0 clamp(var(--s1),3cqi,var(--s3))}
+ .dc b{font-size:clamp(1rem,4.4cqi,1.9rem)}
+ .n{padding:0 clamp(6px,2cqi,var(--s3))}
+ .n b{font-size:clamp(1.75rem,min(9.5cqi,8vh),4rem)}
+ .n:first-child b{font-size:clamp(3.25rem,min(21cqi,16vh),8rem)}
+ .n span{font-size:clamp(.54rem,2.4cqi,.78rem);letter-spacing:.1em}
+}
+
+/* pie chart card */
+.pie{border:1px solid var(--line);background:var(--parch2);padding:var(--s3)}
+.pie h2{margin:0 0 var(--s1);font:600 .75rem var(--display);letter-spacing:.2em;color:var(--oxblood)}
+.pie .for{margin:0 0 var(--s3);font:600 1rem/1.3 var(--display)}
+.pie svg{display:block;width:min(100%,208px,32vh);height:auto;margin:0 auto var(--s3)}
+.pl{fill:var(--line);stroke:var(--ink);stroke-width:1.5}
+.pw{fill:var(--oxblood);stroke:var(--ink);stroke-width:1.5}
+.lg{display:grid;grid-template-columns:16px 1fr auto;gap:var(--s1);align-items:center;padding:var(--s1) 0;border-top:1px dotted var(--ink)}
+.lg i{width:16px;height:16px;border:1px solid var(--ink)}
+.lg .w{background:var(--oxblood)}.lg .l{background:var(--line)}
+.lg em{font:600 .85rem var(--display);font-style:normal;letter-spacing:.06em}
+.lg b{font:800 1.05rem var(--num);font-variant-numeric:tabular-nums}
+.pie .since{margin:var(--s2) 0 0;font:400 .7rem/1.5 var(--display);letter-spacing:.08em;color:var(--muted)}
+
+/* schedule table */
+.rule{display:flex;align-items:center;gap:var(--s1);margin:var(--s2) 0 var(--s1);color:var(--muted)}
+.rule::after{content:"";flex:1;height:1px;background:var(--line)}
+.rule i{width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+.rule h2{margin:0;font:400 .78rem var(--display);letter-spacing:.2em}
+.tbl{width:100%;border-collapse:collapse;margin:0 0 var(--s4)}
+.tbl th{padding:var(--s1) var(--s2);border-bottom:1px solid var(--ink);font:600 .68rem var(--display);letter-spacing:.16em;color:var(--muted);text-align:left}
+.tbl td{padding:var(--s2);border-bottom:1px dotted var(--line);vertical-align:middle}
+.tbl .nm{font:600 1.05rem/1.25 var(--display)}
+.tbl .code{margin-top:4px;font-size:.66rem}
+.tbl .dbox{display:flex;align-items:center;gap:var(--s1)}
+.tbl .dn{font:800 clamp(1.9rem,7vw,2.6rem)/1 var(--num);color:var(--oxblood);font-variant-numeric:tabular-nums}
+.tbl .dst{display:flex;flex-direction:column;font:600 .72rem/1.35 var(--display);letter-spacing:.1em;color:var(--muted)}
+.tbl .tmz{display:block;margin-top:4px;font:700 .82rem var(--num);color:var(--muted);white-space:nowrap}
+.tbl .cd{white-space:nowrap;font-variant-numeric:tabular-nums}
+.tbl .cd .dy{display:block;font:800 1.45rem/1 var(--num);color:var(--oxblood)}
+.tbl .cd .hms{display:block;margin-top:4px;font:700 .95rem var(--num);color:var(--ink)}
+.tbl tr.next td{background:var(--parch2)}
+.tbl tr.done .nm{font-weight:400;color:var(--muted)}
+.tbl tr.done .dn,.tbl tr.done .cd .dy{color:var(--muted)}
+.tbl tr.done .cd .dy{font-size:1rem}
+.loading{padding:var(--s5) 0;color:var(--muted)}
+
+/* calendar (left) + schedule table (right) */
+.board{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s3)}
+.calbox{display:none}
+.schedule{min-width:0;container-type:inline-size}
+.schedule .tbl{margin:0}
+.cal{width:100%;border-collapse:separate;border-spacing:2px;table-layout:fixed;margin:0 0 var(--s2)}
+.cal caption{padding:var(--s1) 0;font:600 .95rem var(--display);letter-spacing:.06em;text-align:left}
+.cal th{padding:4px 0;font:600 .6rem var(--display);letter-spacing:.1em;color:var(--muted);text-align:center}
+.cal td{height:44px;padding:0;border:1px solid transparent;text-align:center;vertical-align:middle;font:700 .95rem/1 var(--num);color:var(--ink)}
+.cal td.we,.cal th.we{background:var(--parch2)}
+.cal td.we{color:var(--muted)}
+.cal td.past{color:var(--muted)}
+.cal td.exam{background:var(--oxblood);border-color:var(--ink);color:var(--parch)}
+.cal td.exam.past{background:var(--muted)}
+.cal td.today{outline:2px solid var(--ink);outline-offset:-3px}
+.cal td small{display:block;margin-top:3px;font:600 .5rem var(--display);letter-spacing:.06em}
+.key{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);margin:var(--s2) 0 0;font:600 .68rem var(--display);letter-spacing:.1em;color:var(--muted)}
+.key span{display:inline-flex;align-items:center;gap:var(--s1)}
+.sw{display:inline-block;width:14px;height:14px;border:1px solid var(--ink)}
+.sw.ex{background:var(--oxblood)}.sw.of{background:var(--line)}.sw.we{background:var(--parch2);border-color:var(--line)}.sw.td{background:var(--parch);border-width:2px}
+
+/* days off and exam days graph */
+.skyline{margin:0 0 var(--s4)}
+.sky{--h:clamp(104px,22vh,180px);display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:2px;align-items:end;padding-top:var(--s4);border-bottom:1px solid var(--ink)}
+.sky .col{height:var(--h);display:flex;align-items:flex-end}
+.sky .bar{position:relative;width:100%;height:42%;background:var(--line)}
+.col.we .bar{height:22%;background:var(--parch2);outline:1px solid var(--line);outline-offset:-1px}
+.col.exam .bar{height:100%;background:var(--oxblood)}
+.col.past .bar{opacity:.45}
+.col.today .bar{outline:2px solid var(--ink);outline-offset:1px;opacity:1}
+.sky .t{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);padding-bottom:4px;font:600 .6rem var(--display);letter-spacing:.06em;white-space:nowrap;color:var(--ink)}
+.axis{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:2px;margin-top:4px;min-height:1rem}
+.axis span{justify-self:center;font:700 .62rem/1 var(--num);color:var(--muted);white-space:nowrap}
+.axis .s{justify-self:start}.axis .e{justify-self:end}
+.sky-cap{margin:var(--s1) 0 0;color:var(--muted);font-size:.95rem}
+
+/* table adapts to the width of its own column */
+@container (max-width:560px){
+ .tbl th,.tbl td{padding-left:var(--s1);padding-right:var(--s1)}
+ .tbl .nm{font-size:.88rem}
+ .tbl .code{font-size:.6rem}
+ .tbl .dn{font-size:1.8rem}
+ .tbl .dst{font-size:.64rem}
+ .tbl .cd .dy{font-size:1.2rem}
+ .tbl .cd .hms{font-size:.82rem}
+}
+.note{max-width:60ch;margin:var(--s1) 0 var(--s3);padding:4px 0 4px var(--s2);border-left:3px solid var(--oxblood);font-size:1.15rem;line-height:1.55;white-space:pre-line}
+
+@media (prefers-reduced-motion:no-preference){
+ .reveal>*{opacity:0;transform:translateY(8px);animation:up .28s var(--ease) forwards}
+ .reveal>*:nth-child(2){animation-delay:.06s}.reveal>*:nth-child(3){animation-delay:.12s}.reveal>*:nth-child(4){animation-delay:.18s}
+ @keyframes up{to{opacity:1;transform:none}}
+}
+
+/* laptop and tablet landscape: show the pie beside the countdown */
+@media (min-width:900px){
+ .stage{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s5);align-items:start}
+ .pie{display:block}
+ .board{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s5);align-items:start}
+ .calbox{display:block}
+}
+
+/* phones and small tablets */
+@media (max-width:620px){
+ .frame{padding:var(--s3) var(--s2) var(--s2)}
+ header{flex-direction:column;align-items:flex-start}
+ .uni{font-size:.64rem;letter-spacing:.02em}
+ header{gap:4px}
+ .clock{display:flex;align-items:baseline;gap:var(--s1);text-align:left}
+ .clock small{margin:0}
+ .stage{padding:var(--s2) 0}
+ .tbl th,.tbl td{padding-left:var(--s1);padding-right:var(--s1)}
+ .tbl td{padding-top:12px;padding-bottom:12px}
+ .tbl .nm{font-size:.95rem}
+}
+@media (max-width:480px){
+ main{padding:4px}
+ .frame{padding:var(--s2) 12px var(--s2);outline-offset:-6px}
+ h1{margin-bottom:var(--s2)}
+ .code{font-size:.66rem;letter-spacing:.1em}
+ .dc span{margin-top:4px;font-size:.54rem;letter-spacing:.08em}
+ .dc.big{padding-bottom:12px;margin-bottom:12px}
+ .n span{margin-top:4px}
+ .tbl th{font-size:.58rem;letter-spacing:.08em}
+ .tbl th,.tbl td{padding-left:4px;padding-right:4px}
+ .tbl .nm{font-size:.8rem;letter-spacing:0}
+ .tbl .code{font-size:.58rem;letter-spacing:.06em}
+ .tbl .dbox{gap:4px}
+ .tbl .dn{font-size:1.6rem}
+ .tbl .dst{font-size:.6rem;letter-spacing:.04em}
+ .tbl .tmz{font-size:.68rem}
+ .tbl .cd .dy{font-size:1.05rem}
+ .tbl .cd .hms{font-size:.76rem}
+ .note{font-size:1rem;padding-left:12px}
+}
+@media (max-width:340px){
+ .frame{padding:var(--s2) var(--s1) var(--s1)}
+ .tbl .dn{font-size:1.4rem}
+ .tbl .nm{font-size:.74rem}
+ .tbl .cd .hms{font-size:.7rem}
+}
+@media (max-height:800px){
+ .frame{padding-top:var(--s2)}
+ header{padding-bottom:var(--s1)}
+ .stage{padding:var(--s2) 0}
+ h1{margin-bottom:var(--s2)}
+ .eyebrow{margin-bottom:4px}
+ .dc.big{padding-bottom:12px;margin-bottom:12px}
+ .pie{padding:var(--s2)}
+ .pie .for{margin-bottom:var(--s2)}
+ .pie svg{margin-bottom:var(--s2)}
+}
+@media (max-height:560px){
+ .eyebrow{display:none}
+}
+
+/* exam notes and personal resource repository */
+.exam-tools{padding:var(--s2);background:var(--parch2);border-bottom:1px solid var(--line)}
+.exam-tools h3{margin:0 0 var(--s1);font:600 .76rem var(--display);letter-spacing:.12em;color:var(--oxblood)}
+.exam-tools .hint{margin:0 0 var(--s1);font-size:.9rem;color:var(--muted)}
+.exam-tools textarea,.exam-tools input{width:100%;font:1rem var(--body);color:var(--ink);background:var(--parch);border:1px solid var(--line);border-radius:0;padding:10px;outline-offset:2px}
+.exam-tools textarea{min-height:82px;resize:vertical;display:block;margin-bottom:var(--s1)}
+.exam-tools .resource-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) auto;gap:8px;align-items:center}
+.exam-tools button{font:600 .68rem var(--display);letter-spacing:.06em;background:var(--oxblood);color:var(--parch);border:1px solid var(--ink);padding:10px 12px;cursor:pointer}
+.exam-tools .save-note{margin-top:6px}
+.exam-tools .saved-status{font:600 .68rem var(--display);color:var(--muted);margin-left:8px}
+.exam-tools .resources{margin:var(--s1) 0 0;padding-left:20px}
+.exam-tools .resources li{margin:6px 0;overflow-wrap:anywhere}
+.exam-tools .resources a{color:var(--oxblood)}
+.exam-tools .resource-remove{margin-left:8px;padding:3px 6px;background:transparent;color:var(--oxblood);border:1px solid var(--line)}
+@media(max-width:620px){.exam-tools .resource-form{grid-template-columns:1fr}.exam-tools button{width:100%}}
+
+</style>
+</head>
+<body>
+<main>
+ <div class="frame">
+  <header>
+   <div class="uni">Shahjalal University of Science and Technology, Sylhet · BMB Department</div>
+   <div class="clock"><small>Bangladesh time</small><span id="now">Fri 16 Oct, 11:58:17 pm</span></div>
+  </header>
+  <div id="app"><div class="stage"><div class="hero reveal"><div class="eyebrow">Next up</div><h1>Coordinate Geometry and Linear Algebra<span class="code">MAT 0541 1011D</span></h1><div class="dc big"><div class="c"><b>Sunday</b><span>day</span></div><div class="c"><b>01 Nov</b><span>date</span></div><div class="c tm"><b>9:30 AM</b><span>exam time</span></div></div><div class="nums"><div class="n"><b>15</b><span>days</span></div><div class="n"><b>09</b><span>hours</span></div><div class="n"><b>31</b><span>minutes</span></div><div class="n"><b>42</b><span>seconds</span></div></div></div><aside class="pie" aria-label="Days wasted before the next exam"><h2>Days wasted</h2><p class="for">Before Coordinate Geometry and Linear Algebra</p><svg viewBox="0 0 200 200" role="img" aria-label="Wasted 6.0 days, left 15.4 days"><circle cx="100" cy="100" r="92" class="pl"></circle><path class="pw" d="M100 100L100 8A92 92 0 0 1 190.33 117.45Z"></path></svg><div class="lg"><i class="w"></i><em>Wasted</em><b>6.0 days · 28%</b></div><div class="lg"><i class="l"></i><em>Left</em><b>15.4 days · 72%</b></div><p class="since">Counting from Sun 11 Oct, 12:00 AM</p></aside></div><div class="board"><div class="calbox"><div class="rule"><i></i><h2>Calendar</h2></div><table class="cal"><caption>October 2026</caption><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th class="we" scope="col">Fri</th><th class="we" scope="col">Sat</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td class="past">1</td><td class="we past">2</td><td class="we past">3</td></tr><tr><td class="past">4</td><td class="past">5</td><td class="past">6</td><td class="past">7</td><td class="past">8</td><td class="we past">9</td><td class="we past">10</td></tr><tr><td class="past">11</td><td class="past">12</td><td class="past">13</td><td class="past">14</td><td class="past">15</td><td class="we today" title="Today">16</td><td class="we">17</td></tr><tr><td class="">18</td><td class="">19</td><td class="">20</td><td class="">21</td><td class="">22</td><td class="we">23</td><td class="we">24</td></tr><tr><td class="">25</td><td class="">26</td><td class="">27</td><td class="">28</td><td class="">29</td><td class="we">30</td><td class="we">31</td></tr></tbody></table><table class="cal"><caption>November 2026</caption><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th class="we" scope="col">Fri</th><th class="we" scope="col">Sat</th></tr></thead><tbody><tr><td class="exam" title="Coordinate Geometry and Linear Algebra, 9:30 AM">1<small>MAT</small></td><td class="">2</td><td class="">3</td><td class="">4</td><td class="">5</td><td class="we">6</td><td class="we">7</td></tr><tr><td class="exam" title="Structured Programming Language, 9:30 AM">8<small>CSE</small></td><td class="">9</td><td class="">10</td><td class="">11</td><td class="exam" title="Communicative English, 9:30 AM">12<small>ENG</small></td><td class="we">13</td><td class="we">14</td></tr><tr><td class="">15</td><td class="">16</td><td class="exam" title="Discrete Mathematics, 9:30 AM">17<small>CSE</small></td><td class="">18</td><td class="">19</td><td class="we">20</td><td class="we">21</td></tr><tr><td class="">22</td><td class="exam" title="Electrical Circuit, 9:30 AM">23<small>EE</small></td><td class="">24</td><td class="">25</td><td class="">26</td><td class="we">27</td><td class="we">28</td></tr><tr><td class="">29</td><td class="">30</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p class="key"><span><i class="sw ex"></i>Exam day</span><span><i class="sw td"></i>Today</span><span><i class="sw we"></i>Weekend (Fri, Sat)</span></p></div><div class="schedule"><div class="rule"><i></i><h2>Exam schedule</h2></div><table class="tbl"><thead><tr><th scope="col">Subject</th><th scope="col">Date</th><th scope="col">Countdown</th></tr></thead><tbody><tr class="next"><td class="sub"><div class="nm">Coordinate Geometry and Linear Algebra<span class="code">MAT 0541 1011D</span></div></td><td class="dd"><div class="dbox"><span class="dn">1</span><span class="dst"><span>Sun</span><span>Nov</span></span></div><span class="tmz">9:30 AM</span></td><td class="cd"><span class="dy">15 days</span><span class="hms">09:31:42</span></td></tr><tr><td class="sub"><div class="nm">Structured Programming Language<span class="code">CSE 0613 1133</span></div></td><td class="dd"><div class="dbox"><span class="dn">8</span><span class="dst"><span>Sun</span><span>Nov</span></span></div><span class="tmz">9:30 AM</span></td><td class="cd"><span class="dy">22 days</span><span class="hms">09:31:42</span></td></tr><tr><td class="sub"><div class="nm">Communicative English<span class="code">ENG 0231 1011D</span></div></td><td class="dd"><div class="dbox"><span class="dn">12</span><span class="dst"><span>Thu</span><span>Nov</span></span></div><span class="tmz">9:30 AM</span></td><td class="cd"><span class="dy">26 days</span><span class="hms">09:31:42</span></td></tr><tr><td class="sub"><div class="nm">Discrete Mathematics<span class="code">CSE 0541 1143</span></div></td><td class="dd"><div class="dbox"><span class="dn">17</span><span class="dst"><span>Tue</span><span>Nov</span></span></div><span class="tmz">9:30 AM</span></td><td class="cd"><span class="dy">31 days</span><span class="hms">09:31:42</span></td></tr><tr><td class="sub"><div class="nm">Electrical Circuit<span class="code">EE 0713 1109D</span></div></td><td class="dd"><div class="dbox"><span class="dn">23</span><span class="dst"><span>Mon</span><span>Nov</span></span></div><span class="tmz">9:30 AM</span></td><td class="cd"><span class="dy">37 days</span><span class="hms">09:31:42</span></td></tr></tbody></table></div></div><section class="skyline" aria-label="Days off and exam days" style="--cols: 44;"><div class="rule"><i></i><h2>Days off and exam days</h2></div><div class="sky" role="img" aria-label="44-day span: 5 exam days, 39 days off"><div class="col off past" title="Sun, 11 Oct: day off"><div class="bar"></div></div><div class="col off past" title="Mon, 12 Oct: day off"><div class="bar"></div></div><div class="col off past" title="Tue, 13 Oct: day off"><div class="bar"></div></div><div class="col off past" title="Wed, 14 Oct: day off"><div class="bar"></div></div><div class="col off past" title="Thu, 15 Oct: day off"><div class="bar"></div></div><div class="col we today" title="Fri, 16 Oct: weekend"><div class="bar"><span class="t">Today</span></div></div><div class="col we" title="Sat, 17 Oct: weekend"><div class="bar"></div></div><div class="col off" title="Sun, 18 Oct: day off"><div class="bar"></div></div><div class="col off" title="Mon, 19 Oct: day off"><div class="bar"></div></div><div class="col off" title="Tue, 20 Oct: day off"><div class="bar"></div></div><div class="col off" title="Wed, 21 Oct: day off"><div class="bar"></div></div><div class="col off" title="Thu, 22 Oct: day off"><div class="bar"></div></div><div class="col we" title="Fri, 23 Oct: weekend"><div class="bar"></div></div><div class="col we" title="Sat, 24 Oct: weekend"><div class="bar"></div></div><div class="col off" title="Sun, 25 Oct: day off"><div class="bar"></div></div><div class="col off" title="Mon, 26 Oct: day off"><div class="bar"></div></div><div class="col off" title="Tue, 27 Oct: day off"><div class="bar"></div></div><div class="col off" title="Wed, 28 Oct: day off"><div class="bar"></div></div><div class="col off" title="Thu, 29 Oct: day off"><div class="bar"></div></div><div class="col we" title="Fri, 30 Oct: weekend"><div class="bar"></div></div><div class="col we" title="Sat, 31 Oct: weekend"><div class="bar"></div></div><div class="col exam" title="Sun, 1 Nov: Coordinate Geometry and Linear Algebra"><div class="bar"><span class="t">MAT</span></div></div><div class="col off" title="Mon, 2 Nov: day off"><div class="bar"></div></div><div class="col off" title="Tue, 3 Nov: day off"><div class="bar"></div></div><div class="col off" title="Wed, 4 Nov: day off"><div class="bar"></div></div><div class="col off" title="Thu, 5 Nov: day off"><div class="bar"></div></div><div class="col we" title="Fri, 6 Nov: weekend"><div class="bar"></div></div><div class="col we" title="Sat, 7 Nov: weekend"><div class="bar"></div></div><div class="col exam" title="Sun, 8 Nov: Structured Programming Language"><div class="bar"><span class="t">CSE</span></div></div><div class="col off" title="Mon, 9 Nov: day off"><div class="bar"></div></div><div class="col off" title="Tue, 10 Nov: day off"><div class="bar"></div></div><div class="col off" title="Wed, 11 Nov: day off"><div class="bar"></div></div><div class="col exam" title="Thu, 12 Nov: Communicative English"><div class="bar"><span class="t">ENG</span></div></div><div class="col we" title="Fri, 13 Nov: weekend"><div class="bar"></div></div><div class="col we" title="Sat, 14 Nov: weekend"><div class="bar"></div></div><div class="col off" title="Sun, 15 Nov: day off"><div class="bar"></div></div><div class="col off" title="Mon, 16 Nov: day off"><div class="bar"></div></div><div class="col exam" title="Tue, 17 Nov: Discrete Mathematics"><div class="bar"><span class="t">CSE</span></div></div><div class="col off" title="Wed, 18 Nov: day off"><div class="bar"></div></div><div class="col off" title="Thu, 19 Nov: day off"><div class="bar"></div></div><div class="col we" title="Fri, 20 Nov: weekend"><div class="bar"></div></div><div class="col we" title="Sat, 21 Nov: weekend"><div class="bar"></div></div><div class="col off" title="Sun, 22 Nov: day off"><div class="bar"></div></div><div class="col exam" title="Mon, 23 Nov: Electrical Circuit"><div class="bar"><span class="t">EE</span></div></div></div><div class="axis"><span class="s">11 Oct</span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span>1 Nov</span><span></span><span></span><span></span><span></span><span></span><span></span><span>8</span><span></span><span></span><span></span><span>12</span><span></span><span></span><span></span><span></span><span>17</span><span></span><span></span><span></span><span></span><span></span><span class="e">23</span></div><p class="key"><span><i class="sw ex"></i>Exam day</span><span><i class="sw of"></i>Day off</span><span><i class="sw we"></i>Weekend</span><span><i class="sw td"></i>Today</span></p><p class="sky-cap">44 days, 5 exam days and 39 days off. Friday and Saturday are weekends.</p></section></div>
+ </div>
+</main>
+
+<script>
+window.onerror=function(m,u,l){var a=document.getElementById('app');if(a)a.textContent='Error: '+m+' (line '+l+')'};
+(function(){
+  // ===== EDIT YOUR EVENTS HERE (time is Bangladesh time, format YYYY-MM-DDTHH:MM) =====
+  var state={
+    events:[
+      {id:"introductory-biochemistry",name:"Introductory Biochemistry",iso:"2026-11-02T09:30"},
+      {id:"bioorganic-chemistry-i",name:"Bioorganic Chemistry - I",iso:"2026-11-05T09:30"},
+      {id:"microbiology-i",name:"Microbiology-I",iso:"2026-11-09T09:30"},
+      {id:"effective-communication-in-english",name:"Effective Communication in English",iso:"2026-11-12T09:30"},
+      {id:"biophysical-chemistry-i",name:"Biophysical Chemistry-I",iso:"2026-11-17T09:30"},
+      {id:"calculus",name:"Calculus",iso:"2026-11-22T09:30"}
+    ],
+    message:"" // optional text shown at the bottom
+  };
+  // Pie chart: days "wasted" for the next exam start counting from WASTE_FROM (first exam),
+  // or WASTE_RESTART_HOURS after the previous exam starts (all other exams).
+  var WASTE_FROM="2026-10-17T00:00", WASTE_RESTART_HOURS=3;
+  // =================================================================================
+  var $=function(i){return document.getElementById(i)};
+  var el=function(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+  var p2=function(n){return String(n).padStart(2,'0')};
+  var TZ='Asia/Dhaka';
+  var fTime=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,hour:'numeric',minute:'2-digit',hour12:true});
+  var fClock=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,weekday:'short',day:'numeric',month:'short',hour:'numeric',minute:'2-digit',second:'2-digit',hour12:true});
+  var fSince=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,weekday:'short',day:'numeric',month:'short',hour:'numeric',minute:'2-digit',hour12:true});
+  var fDay=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,weekday:'short',day:'numeric',month:'short'});
+  var fDMY=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,weekday:'long',day:'2-digit',month:'short'});
+  // Event times are Bangladesh time (UTC+6, no daylight saving)
+  var at=function(iso){return new Date(iso+':00+06:00').getTime()};
+  function parts(ms){var s=Math.max(0,Math.floor(ms/1000));return{d:Math.floor(s/86400),h:Math.floor(s%86400/3600),m:Math.floor(s%3600/60),s:s%60}}
+  function nameParts(n){var m=/^(.*?)\s*\(([^)]+)\)\s*$/.exec(n);return m?{t:m[1],c:m[2]}:{t:n,c:''}}
+  function titleEl(tag,cls,name){var p=nameParts(name),e=el(tag,cls,p.t);if(p.c)e.appendChild(el('span','code',p.c));return e}
+
+  // Personal notes and resource links are stored per exam in this browser.
+  // localStorage keeps them across reloads and later visits on this same browser/device.
+  var NOTES_KEY='bmb-semester-1-1-2026-exam-notes-v1';
+  function readNotes(){
+    try{return JSON.parse(localStorage.getItem(NOTES_KEY)||'{}')}catch(e){return {}}
+  }
+  function writeNotes(data){
+    try{localStorage.setItem(NOTES_KEY,JSON.stringify(data));return true}catch(e){return false}
+  }
+  function safeUrl(value){
+    try{var u=new URL(value);return (u.protocol==='https:'||u.protocol==='http:')?u.href:''}catch(e){return ''}
+  }
+  function buildExamTools(event){
+    var wrap=el('div','exam-tools'),key=event.id||event.iso+'-'+event.name;
+    var data=readNotes(),saved=data[key]||{note:'',resources:[]};
+    wrap.appendChild(el('h3',null,'Personal notes & resource repository'));
+    wrap.appendChild(el('p','hint','Notes and links are saved for this exam on this browser.'));
+    var area=document.createElement('textarea');
+    area.value=saved.note||'';area.setAttribute('aria-label','Notes for '+event.name);
+    area.placeholder='Write revision notes, topics to review, reminders, or anything useful…';
+    wrap.appendChild(area);
+    var saveRow=el('div'),save=el('button','save-note','Save notes'),status=el('span','saved-status','');
+    save.type='button';
+    save.addEventListener('click',function(){
+      var all=readNotes();all[key]=all[key]||{note:'',resources:[]};all[key].note=area.value;
+      status.textContent=writeNotes(all)?'Saved in this browser':'Could not save — browser storage may be disabled.';
+    });
+    saveRow.appendChild(save);saveRow.appendChild(status);wrap.appendChild(saveRow);
+    var form=el('div','resource-form');
+    var labelInput=document.createElement('input');labelInput.type='text';labelInput.placeholder='Resource name (e.g. lecture slides)';labelInput.setAttribute('aria-label','Resource name');
+    var urlInput=document.createElement('input');urlInput.type='url';urlInput.placeholder='https://…';urlInput.setAttribute('aria-label','Resource URL');
+    var add=el('button',null,'Add resource');add.type='button';
+    form.appendChild(labelInput);form.appendChild(urlInput);form.appendChild(add);wrap.appendChild(form);
+    var list=el('ul','resources');
+    function drawResources(){
+      list.textContent='';
+      var latest=readNotes()[key]||{resources:[]};
+      (latest.resources||[]).forEach(function(resource,index){
+        var li=el('li'),a=document.createElement('a');a.href=resource.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=resource.label||resource.url;
+        li.appendChild(a);
+        var remove=el('button','resource-remove','Remove');remove.type='button';
+        remove.addEventListener('click',function(){
+          var all=readNotes();if(!all[key])return;all[key].resources.splice(index,1);writeNotes(all);drawResources();
+        });
+        li.appendChild(remove);list.appendChild(li);
+      });
+      if(!list.children.length)list.appendChild(el('li',null,'No resources added yet.'));
+    }
+    add.addEventListener('click',function(){
+      var url=safeUrl(urlInput.value.trim());
+      if(!url){status.textContent='Enter a valid http:// or https:// link.';return}
+      var all=readNotes();all[key]=all[key]||{note:'',resources:[]};
+      all[key].resources.push({label:labelInput.value.trim()||url,url:url});
+      if(writeNotes(all)){urlInput.value='';labelInput.value='';status.textContent='Resource saved.';drawResources()}
+      else status.textContent='Could not save — browser storage may be disabled.';
+    });
+    wrap.appendChild(list);drawResources();
+    return wrap;
+  }
+
+  function timeStr(ms){return fTime.format(new Date(ms)).toUpperCase()}
+  function sinceStr(ms){return fSince.format(new Date(ms)).replace(/\b(am|pm)\b/,function(m){return m.toUpperCase()})}
+  function dateCols(ms,cls){
+    var P={};fDMY.formatToParts(new Date(ms)).forEach(function(x){P[x.type]=x.value});
+    var w=el('div','dc '+(cls||''));
+    [[P.weekday,'day'],[P.day+' '+P.month,'date'],[timeStr(ms),'exam time']].forEach(function(x,i){
+      var c=el('div','c'+(i===2?' tm':''));c.appendChild(el('b',null,x[0]));c.appendChild(el('span',null,x[1]));w.appendChild(c)});
+    return w;
+  }
+  function rule(t){var r=el('div','rule');r.appendChild(el('i'));r.appendChild(el('h2',null,t));return r}
+
+  // ---- pie chart (SVG, flat colors) ----
+  var NS='http://www.w3.org/2000/svg';
+  function arc(f){
+    if(f<=0)return '';
+    if(f>=.9999)return 'M100 100m-92 0a92 92 0 1 0 184 0a92 92 0 1 0 -184 0';
+    var a=f*2*Math.PI;
+    return 'M100 100L100 8A92 92 0 '+(f>.5?1:0)+' 1 '+(100+92*Math.sin(a)).toFixed(2)+' '+(100-92*Math.cos(a)).toFixed(2)+'Z';
+  }
+  function legendRow(cls,label){
+    var r=el('div','lg'),v=el('b');
+    r.appendChild(el('i',cls));r.appendChild(el('em',null,label));r.appendChild(v);return{row:r,val:v};
+  }
+  function buildPie(l,idx){
+    var target=l[idx],start=idx===0?at(WASTE_FROM):l[idx-1].t+WASTE_RESTART_HOURS*3600000;
+    var box=el('aside','pie');box.setAttribute('aria-label','Days wasted before the next exam');
+    box.appendChild(el('h2',null,'Days wasted'));
+    box.appendChild(el('p','for','Before '+nameParts(target.e.name).t));
+    var svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 200 200');svg.setAttribute('role','img');
+    var base=document.createElementNS(NS,'circle');base.setAttribute('cx','100');base.setAttribute('cy','100');base.setAttribute('r','92');base.setAttribute('class','pl');
+    var pw=document.createElementNS(NS,'path');pw.setAttribute('class','pw');
+    svg.appendChild(base);svg.appendChild(pw);box.appendChild(svg);
+    var lw=legendRow('w','Wasted'),ll=legendRow('l','Left');
+    box.appendChild(lw.row);box.appendChild(ll.row);
+    box.appendChild(el('p','since','Counting from '+sinceStr(start)));
+    return{node:box,update:function(now){
+      var total=Math.max(1,target.t-start),w=Math.min(total,Math.max(0,now-start)),f=w/total;
+      pw.setAttribute('d',arc(f));
+      var wd=(w/864e5).toFixed(1),ld=((total-w)/864e5).toFixed(1);
+      lw.val.textContent=wd+' days \u00b7 '+Math.round(f*100)+'%';
+      ll.val.textContent=ld+' days \u00b7 '+(100-Math.round(f*100))+'%';
+      svg.setAttribute('aria-label','Wasted '+wd+' days, left '+ld+' days');
+    }};
+  }
+
+  // ---- calendar and days-off graph (days are Bangladesh calendar days) ----
+  var fKey=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'});
+  function dayKey(ms){var P={};fKey.formatToParts(new Date(ms)).forEach(function(x){P[x.type]=x.value});return P.year+'-'+P.month+'-'+P.day}
+  var DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var CALDAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat']; // calendar starts on Sunday; Fri and Sat are the weekend
+  var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var utc=function(k){var a=k.split('-');return Date.UTC(+a[0],+a[1]-1,+a[2])};
+  var isoKey=function(t){return new Date(t).toISOString().slice(0,10)};
+  function abbr(name){var p=nameParts(name),w=p.c?p.c.split(' ')[0]:p.t.slice(0,3);return w.slice(0,4).toUpperCase()}
+  function span(l){var a=dayKey(at(WASTE_FROM)),f=dayKey(l[0].t);return{a:f<a?f:a,b:dayKey(l[l.length-1].t)}}
+  function examMap(l){var m={};l.forEach(function(x){var k=dayKey(x.t);(m[k]=m[k]||[]).push(x)});return m}
+  function keyRow(items){var k=el('p','key');items.forEach(function(i){var s=el('span');s.appendChild(el('i','sw '+i[0]));s.appendChild(document.createTextNode(i[1]));k.appendChild(s)});return k}
+
+  function buildCalendar(l,now){
+    var box=el('div','calbox'),sp=span(l),ex=examMap(l),today=dayKey(now);
+    box.appendChild(rule('Calendar'));
+    var s=sp.a.split('-'),e=sp.b.split('-'),y=+s[0],m=+s[1];
+    while(y<+e[0]||(y===+e[0]&&m<=+e[1])){
+      var tb=document.createElement('table');tb.className='cal';
+      var cap=document.createElement('caption');cap.textContent=MONTHS[m-1]+' '+y;tb.appendChild(cap);
+      var hd=document.createElement('tr'),th=document.createElement('thead');
+      CALDAYS.forEach(function(d,i){var h=el('th',i>4?'we':null,d);h.scope='col';hd.appendChild(h)});
+      th.appendChild(hd);tb.appendChild(th);
+      var body=document.createElement('tbody'),lead=new Date(Date.UTC(y,m-1,1)).getUTCDay(),n=new Date(Date.UTC(y,m,0)).getUTCDate(),tr=null;
+      for(var c=0;c<lead+n;c++){
+        if(c%7===0){tr=document.createElement('tr');body.appendChild(tr)}
+        var td=document.createElement('td');
+        if(c>=lead){
+          var d=c-lead+1,k=y+'-'+p2(m)+'-'+p2(d),evs=ex[k],cls=[];
+          if(c%7>4)cls.push('we');
+          if(evs){cls.push('exam');if(evs.every(function(x){return x.t<=now}))cls.push('past')}
+          else if(k<today)cls.push('past');
+          if(k===today)cls.push('today');
+          td.className=cls.join(' ');
+          td.appendChild(document.createTextNode(d));
+          if(evs){td.appendChild(el('small',null,abbr(evs[0].e.name)));td.title=evs.map(function(x){return nameParts(x.e.name).t+', '+timeStr(x.t)}).join(' / ')}
+          else if(k===today)td.title='Today';
+        }
+        tr.appendChild(td);
+      }
+      while(tr.children.length<7)tr.appendChild(document.createElement('td'));
+      tb.appendChild(body);box.appendChild(tb);
+      m++;if(m>12){m=1;y++}
+    }
+    box.appendChild(keyRow([['ex','Exam day'],['td','Today'],['we','Weekend (Fri, Sat)']]));
+    return box;
+  }
+
+  function buildSky(l,now){
+    var wrap=el('section','skyline'),sp=span(l),ex=examMap(l),today=dayKey(now),days=[];
+    wrap.setAttribute('aria-label','Days off and exam days');
+    wrap.appendChild(rule('Days off and exam days'));
+    for(var t=utc(sp.a),end=utc(sp.b);t<=end;t+=864e5)days.push(t);
+    wrap.style.setProperty('--cols',days.length);
+    var sky=el('div','sky'),axis=el('div','axis'),examDays=0;
+    days.forEach(function(t,i){
+      var k=isoKey(t),dt=new Date(t),dow=dt.getUTCDay(),d=dt.getUTCDate(),mon=MONTHS[dt.getUTCMonth()].slice(0,3),evs=ex[k];
+      var cls=['col',evs?'exam':(dow>4?'we':'off')];
+      if(evs){examDays++;if(evs.every(function(x){return x.t<=now}))cls.push('past')}else if(k<today)cls.push('past');
+      if(k===today)cls.push('today');
+      var col=el('div',cls.join(' ')),bar=el('div','bar');
+      col.title=DAYS[dow]+', '+d+' '+mon+(evs?': '+evs.map(function(x){return nameParts(x.e.name).t}).join(' / '):(dow>4?': weekend':': day off'));
+      if(evs)bar.appendChild(el('span','t',abbr(evs[0].e.name)));else if(k===today)bar.appendChild(el('span','t','Today'));
+      col.appendChild(bar);sky.appendChild(col);
+      var lab=el('span',i===0?'s':(i===days.length-1?'e':''),i===0||d===1?d+' '+mon:(evs?String(d):''));
+      axis.appendChild(lab);
+    });
+    sky.setAttribute('role','img');
+    sky.setAttribute('aria-label',days.length+'-day span: '+examDays+' exam days, '+(days.length-examDays)+' days off');
+    wrap.appendChild(sky);wrap.appendChild(axis);
+    wrap.appendChild(keyRow([['ex','Exam day'],['of','Day off'],['we','Weekend'],['td','Today']]));
+    wrap.appendChild(el('p','sky-cap',days.length+' days, '+examDays+' exam day'+(examDays===1?'':'s')+' and '+(days.length-examDays)+' days off. Friday and Saturday are weekends.'));
+    return wrap;
+  }
+
+  var sig=null,live=[],first=true;
+  function render(){
+    var app=$('app'),now=Date.now();
+    var l=state.events.map(function(e){return{e:e,t:at(e.iso)}}).filter(function(x){return !isNaN(x.t)}).sort(function(a,b){return a.t-b.t});
+    var up=l.filter(function(x){return x.t>now}),past=l.filter(function(x){return x.t<=now}).reverse();
+    var ns=up.map(function(x){return x.e.name+'@'+x.e.iso}).join('|')+'#'+past.length+'~'+(state.message||'')+'@'+dayKey(now);
+    if(ns===sig){live.forEach(function(f){f(now)});return}
+    sig=ns;live=[];app.textContent='';
+    var stage=el('div','stage'),hero=el('div','hero'+(first?' reveal':''));first=false;
+    if(up.length){
+      var n=up[0],p=parts(n.t-now);
+      hero.appendChild(el('div','eyebrow','Next up'));
+      hero.appendChild(titleEl('h1',null,n.e.name));
+      hero.appendChild(dateCols(n.t,'big'));
+      var nums=el('div','nums');
+      [['days',p.d],['hours',p2(p.h)],['minutes',p2(p.m)],['seconds',p2(p.s)]].forEach(function(x){
+        var c=el('div','n');c.appendChild(el('b',null,x[1]));c.appendChild(el('span',null,x[0]));nums.appendChild(c)});
+      hero.appendChild(nums);
+      var bs=nums.querySelectorAll('b');
+      live.push(function(now){var q=parts(n.t-now),v=[q.d,p2(q.h),p2(q.m),p2(q.s)];for(var i=0;i<4;i++)if(bs[i].textContent!==String(v[i]))bs[i].textContent=v[i]});
+    }else{
+      hero.appendChild(el('h1',null,l.length?'Nothing left to count down to':'No events yet'));
+      hero.appendChild(el('div','when',l.length?'All events have passed.':'Add events in the list at the top of the script.'));
+    }
+    stage.appendChild(hero);
+    if(up.length){var pie=buildPie(l,l.indexOf(up[0]));pie.update(now);live.push(pie.update);stage.appendChild(pie.node)}
+    app.appendChild(stage);
+    if(l.length){
+      var board=el('div','board'),sch=el('div','schedule');
+      board.appendChild(buildCalendar(l,now));
+      sch.appendChild(rule('Exam schedule'));
+      var tb=document.createElement('table');tb.className='tbl';
+      var th=document.createElement('thead'),hr=document.createElement('tr');
+      ['Subject','Date','Countdown'].forEach(function(h){var c=el('th',null,h);c.scope='col';hr.appendChild(c)});
+      th.appendChild(hr);tb.appendChild(th);
+      var body=document.createElement('tbody');
+      up.concat(past).forEach(function(x,i){
+        var done=x.t<=now,r=el('tr',done?'done':(i===0?'next':''));
+        r.appendChild(function(){var c=el('td','sub');c.appendChild(titleEl('div','nm',x.e.name));return c}());
+        var P={};fDay.formatToParts(new Date(x.t)).forEach(function(q){P[q.type]=q.value});
+        var dd=el('td','dd'),box=el('div','dbox'),st=el('span','dst');
+        box.appendChild(el('span','dn',P.day));st.appendChild(el('span',null,P.weekday));st.appendChild(el('span',null,P.month));
+        box.appendChild(st);dd.appendChild(box);dd.appendChild(el('span','tmz',timeStr(x.t)));r.appendChild(dd);
+        var cd=el('td','cd'),dy=el('span','dy'),hm=el('span','hms');cd.appendChild(dy);cd.appendChild(hm);r.appendChild(cd);
+        if(done){dy.textContent='Ended'}
+        else{var upd=function(now){var q=parts(x.t-now);dy.textContent=q.d+(q.d===1?' day':' days');hm.textContent=p2(q.h)+':'+p2(q.m)+':'+p2(q.s)};upd(now);live.push(upd)}
+        body.appendChild(r);
+        var toolsRow=el('tr','exam-tools-row'),toolsCell=el('td',null);
+        toolsCell.colSpan=3;toolsCell.appendChild(buildExamTools(x.e));toolsRow.appendChild(toolsCell);body.appendChild(toolsRow);
+      });
+      tb.appendChild(body);sch.appendChild(tb);board.appendChild(sch);app.appendChild(board);
+      app.appendChild(buildSky(l,now));
+    }
+    if(state.message&&state.message.trim()){app.appendChild(el('div','note',state.message.trim()))}
+  }
+  function tick(){$('now').textContent=fClock.format(new Date());render()}
+  tick();setInterval(tick,1000);
+})();
+</script>
+
+
+</body></html>
